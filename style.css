@@ -1,3 +1,7 @@
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -19,14 +23,13 @@ body {
 
     overflow-x: hidden;
 
-    transition: background 0.3s ease,
-                color 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 
-/* =========================
+/* =========================================================
    NAVBAR
-========================= */
+========================================================= */
 
 .navbar {
     position: sticky;
@@ -44,13 +47,15 @@ body {
 
     background: #111;
 
-    border-bottom: 1px solid rgba(255,255,255,0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 
-/* LOGO */
+/* =========================================================
+   LOGO
+========================================================= */
 
 .logo {
     display: flex;
@@ -60,34 +65,33 @@ body {
     min-width: 180px;
 }
 
-.logo span {
-    width: 35px;
-    height: 35px;
+.logo img {
+    width: 42px;
+    height: 42px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    object-fit: contain;
 
-    border-radius: 50%;
+    display: block;
 
-    background: #c79a27;
-    color: #111;
-
-    font-weight: bold;
+    flex-shrink: 0;
 }
 
 .logo strong {
     font-size: 15px;
+    white-space: nowrap;
 }
 
 
-/* MENU */
+/* =========================================================
+   DESKTOP MENU
+========================================================= */
 
 .menu {
     flex: 1;
 
     display: flex;
     justify-content: center;
+    align-items: center;
 
     gap: 25px;
 }
@@ -107,7 +111,21 @@ body {
 }
 
 
-/* THEME BUTTON */
+/* =========================================================
+   NAV ACTIONS
+========================================================= */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+/* =========================================================
+   THEME BUTTON
+========================================================= */
 
 .theme-btn {
     width: 38px;
@@ -121,9 +139,16 @@ body {
 
     cursor: pointer;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     font-size: 18px;
 
-    transition: 0.2s ease;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .theme-btn:hover {
@@ -131,12 +156,47 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
+   HAMBURGER BUTTON
+========================================================= */
+
+.hamburger {
+    display: none;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #222;
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.hamburger:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
    BROCHURE
-========================= */
+========================================================= */
 
 .brochure {
     width: 100%;
+
     margin: 0;
     padding: 0;
 }
@@ -148,6 +208,9 @@ body {
     padding: 0;
 
     background: white;
+
+    line-height: 0;
+    scroll-margin-top: 70px;
 }
 
 .page img {
@@ -160,12 +223,14 @@ body {
 
     margin: 0;
     padding: 0;
+
+    border: 0;
 }
 
 
-/* =========================
+/* =========================================================
    LIGHT MODE
-========================= */
+========================================================= */
 
 body.light {
     background: #f5f5f5;
@@ -186,65 +251,467 @@ body.light .menu a:hover {
     color: #b8860b;
 }
 
-body.light .theme-btn {
+body.light .theme-btn,
+body.light .hamburger {
     background: #eee;
     color: #111;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================================
+   TRUST SECTION
+========================================================= */
+
+.trust-section {
+    width: 100%;
+
+    padding: 60px 20px;
+
+    background: #111;
+    color: white;
+
+    text-align: center;
+}
+
+.trust-container {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+.trust-section h2 {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.trust-subtitle {
+    color: #aaa;
+
+    font-size: 15px;
+
+    margin-bottom: 40px;
+}
+
+.trust-items {
+    display: flex;
+
+    justify-content: center;
+    align-items: stretch;
+
+    gap: 20px;
+}
+
+.trust-item {
+    flex: 1;
+
+    max-width: 280px;
+
+    padding: 25px 15px;
+
+    border: 1px solid rgba(212, 168, 44, 0.35);
+
+    border-radius: 12px;
+
+    background: #181818;
+}
+
+.trust-icon {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.trust-item h3 {
+    color: #d4a82c;
+
+    font-size: 26px;
+
+    margin-bottom: 5px;
+}
+
+.trust-item p {
+    color: #bbb;
+
+    font-size: 14px;
+}
+
+.trust-message {
+    margin-top: 35px;
+
+    color: #d4a82c;
+
+    font-size: 16px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    width: 100%;
+
+    padding: 35px 20px 25px;
+
+    text-align: center;
+
+    background: #090909;
+    color: white;
+}
+
+.footer-brand {
+    font-size: 20px;
+
+    font-weight: 600;
+
+    color: #d4a82c;
+
+    margin-bottom: 8px;
+}
+
+.footer > p {
+    color: #999;
+
+    font-size: 13px;
+}
+
+.footer-line {
+    width: 80px;
+    height: 1px;
+
+    margin: 20px auto;
+
+    background: #d4a82c;
+
+    opacity: 0.5;
+}
+
+.footer .copyright {
+    font-size: 12px;
+
+    color: #666;
+}
+
+
+/* =========================================================
+   LIGHT MODE - TRUST + FOOTER
+========================================================= */
+
+body.light .trust-section {
+    background: #f5f5f5;
+
+    color: #111;
+}
+
+body.light .trust-subtitle {
+    color: #666;
+}
+
+body.light .trust-item {
+    background: white;
+
+    border-color: #ddd;
+}
+
+body.light .trust-item p {
+    color: #666;
+}
+
+body.light .footer {
+    background: #eaeaea;
+
+    color: #111;
+}
+
+body.light .footer > p {
+    color: #666;
+}
+
+body.light .footer .copyright {
+    color: #777;
+}
+
+
+/* =========================================================
+   MOBILE - 768px
+========================================================= */
 
 @media (max-width: 768px) {
 
-    .navbar {
-        height: 55px;
+    /* -------------------------
+       NAVBAR
+    ------------------------- */
 
-        padding: 0 12px;
+    .navbar {
+        height: 52px;
+
+        padding: 0 10px;
     }
+
+
+    /* -------------------------
+       LOGO
+    ------------------------- */
 
     .logo {
         min-width: auto;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        width: 36px;
+        height: 36px;
     }
 
     .logo strong {
         display: none;
     }
 
-    .logo span {
-        width: 32px;
-        height: 32px;
+
+    /* -------------------------
+       NAV ACTIONS
+    ------------------------- */
+
+    .nav-actions {
+        margin-left: auto;
+
+        gap: 6px;
     }
 
-    .menu {
-        gap: 14px;
 
-        overflow-x: auto;
-
-        justify-content: flex-start;
-
-        margin-left: 12px;
-
-        scrollbar-width: none;
-    }
-
-    .menu::-webkit-scrollbar {
-        display: none;
-    }
-
-    .menu a {
-        font-size: 12px;
-
-        white-space: nowrap;
-    }
+    /* -------------------------
+       THEME BUTTON
+    ------------------------- */
 
     .theme-btn {
-        flex-shrink: 0;
-
         width: 34px;
         height: 34px;
 
         font-size: 16px;
+    }
+
+
+    /* -------------------------
+       HAMBURGER
+    ------------------------- */
+
+    .hamburger {
+        display: flex;
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 18px;
+    }
+
+
+    /* -------------------------
+       MOBILE MENU
+    ------------------------- */
+
+    .menu {
+        position: absolute;
+
+        top: 52px;
+        right: 10px;
+
+        width: 220px;
+
+        display: none;
+
+        flex-direction: column;
+
+        justify-content: flex-start;
+        align-items: stretch;
+
+        gap: 0;
+
+        margin: 0;
+        padding: 8px 0;
+
+        background: #181818;
+
+        border: 1px solid rgba(255, 255, 255, 0.12);
+
+        border-radius: 12px;
+
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+
+
+    /* OPEN MENU */
+
+    .menu.active {
+        display: flex;
+    }
+
+
+    /* MENU LINKS */
+
+    .menu a {
+        display: block;
+
+        width: 100%;
+
+        padding: 14px 18px;
+
+        font-size: 14px;
+
+        white-space: nowrap;
+
+        color: white;
+    }
+
+    .menu a:hover {
+        background: rgba(212, 168, 44, 0.1);
+
+        color: #d4a82c;
+    }
+
+
+    /* -------------------------
+       LIGHT MODE MOBILE MENU
+    ------------------------- */
+
+    body.light .menu {
+        background: white;
+
+        border: 1px solid #ddd;
+
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    body.light .menu a {
+        color: #111;
+    }
+
+    body.light .menu a:hover {
+        background: rgba(184, 134, 11, 0.08);
+
+        color: #b8860b;
+    }
+
+
+    /* -------------------------
+       TRUST SECTION
+    ------------------------- */
+
+    .trust-section {
+        padding: 45px 15px;
+    }
+
+    .trust-section h2 {
+        font-size: 24px;
+    }
+
+    .trust-subtitle {
+        font-size: 14px;
+
+        margin-bottom: 30px;
+    }
+
+    .trust-items {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 15px;
+    }
+
+    .trust-item {
+        width: 100%;
+
+        max-width: 350px;
+
+        padding: 22px 15px;
+    }
+
+    .trust-icon {
+        font-size: 28px;
+    }
+
+    .trust-item h3 {
+        font-size: 24px;
+    }
+
+    .trust-message {
+        font-size: 14px;
+
+        margin-top: 25px;
+    }
+
+
+    /* -------------------------
+       FOOTER
+    ------------------------- */
+
+    .footer {
+        padding: 30px 15px 22px;
+    }
+
+    .footer-brand {
+        font-size: 18px;
+    }
+
+    .footer > p {
+        font-size: 12px;
+    }
+
+    .footer .copyright {
+        font-size: 11px;
+    }
+    .page {
+        scroll-margin-top: 60px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE - 400px
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .navbar {
+        height: 50px;
+
+        padding: 0 8px;
+    }
+
+    .logo img {
+        width: 34px;
+        height: 34px;
+    }
+
+    .theme-btn,
+    .hamburger {
+        width: 32px;
+        height: 32px;
+
+        font-size: 15px;
+    }
+
+    .menu {
+        top: 50px;
+
+        right: 8px;
+
+        width: 200px;
+    }
+
+    .menu a {
+        padding: 13px 16px;
+
+        font-size: 13px;
+    }
+
+    .trust-section h2 {
+        font-size: 22px;
     }
 }

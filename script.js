@@ -2,6 +2,10 @@ const brochure = document.getElementById("brochure");
 
 const themeToggle = document.getElementById("themeToggle");
 
+const hamburger = document.getElementById("hamburger");
+
+const menu = document.getElementById("menu");
+
 const totalPages = 26;
 
 
@@ -31,7 +35,6 @@ for (let i = 1; i <= totalPages; i++) {
 
     brochure.appendChild(page);
 }
-
 
 
 // =========================
@@ -77,3 +80,71 @@ if (savedTheme === "light") {
     themeToggle.textContent = "☀️";
 
 }
+
+
+// =========================
+// HAMBURGER MENU
+// =========================
+
+hamburger.addEventListener("click", () => {
+
+    const isOpen = menu.classList.toggle("active");
+
+    if (isOpen) {
+
+        hamburger.textContent = "✕";
+
+        hamburger.setAttribute("aria-expanded", "true");
+
+    } else {
+
+        hamburger.textContent = "☰";
+
+        hamburger.setAttribute("aria-expanded", "false");
+
+    }
+
+});
+
+
+// =========================
+// CLOSE MENU AFTER CLICK
+// =========================
+
+document.querySelectorAll(".menu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        menu.classList.remove("active");
+
+        hamburger.textContent = "☰";
+
+        hamburger.setAttribute("aria-expanded", "false");
+
+    });
+
+});
+
+
+// =========================
+// CLOSE MENU WHEN CLICKING
+// OUTSIDE
+// =========================
+
+document.addEventListener("click", (event) => {
+
+    const clickedInsideMenu = menu.contains(event.target);
+
+    const clickedHamburger = hamburger.contains(event.target);
+
+    if (!clickedInsideMenu && !clickedHamburger) {
+
+        menu.classList.remove("active");
+
+        hamburger.textContent = "☰";
+
+        hamburger.setAttribute("aria-expanded", "false");
+
+    }
+
+});

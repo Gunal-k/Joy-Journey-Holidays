@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/png">
 
     <title>Joy Journey Holidays</title>
 
@@ -12,15 +13,14 @@
 
 <body>
 
-    <!-- TOP MENU -->
     <header class="navbar">
 
         <div class="logo">
-            <span>JJ</span>
+            <img src="icon.png" alt="Joy Journey Holidays Logo">
             <strong>Joy Journey</strong>
         </div>
 
-        <nav class="menu">
+        <nav class="menu" id="menu">
             <a href="#page-1">Home</a>
             <a href="#page-2">About</a>
             <a href="#page-4">Facilities</a>
@@ -29,15 +29,94 @@
             <a href="#page-23">Packages</a>
         </nav>
 
-        <button id="themeToggle" class="theme-btn">
-            🌙
-        </button>
+        <div class="nav-actions">
+
+            <button class="theme-btn" id="themeToggle">
+                ☀️
+            </button>
+
+            <button class="hamburger" id="hamburger">
+                ☰
+            </button>
+
+        </div>
 
     </header>
 
 
     <!-- BROCHURE -->
     <main id="brochure" class="brochure"></main>
+    <!-- TRUST SECTION -->
+    <section class="trust-section">
+
+        <div class="trust-container">
+
+            <h2>Trusted by Our Customers</h2>
+
+            <p class="trust-subtitle">
+                Making every journey comfortable, memorable and enjoyable.
+            </p>
+
+            <!-- Key Metrics Grid -->
+            <div class="trust-items">
+
+                <div class="trust-item">
+                    <div class="trust-icon" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3>2500+</h3>
+                    <p>Happy Customers</p>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <h3>4.8 / 5</h3>
+                    <p>Customer Rating</p>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>100% Secure</h3>
+                    <p>Verified Stays & Support</p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-brand">
+            Joy Journey Holidays
+        </div>
+
+        <p>
+            Club • Resorts • Hotels • Farmhouse
+        </p>
+
+        <div class="footer-line"></div>
+
+        <p class="copyright">
+            © 2026 Joy Journey Holidays. All Rights Reserved.
+        </p>
+
+    </footer>
 
 
     <script src="script.js"></script>
